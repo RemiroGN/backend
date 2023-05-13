@@ -37,6 +37,14 @@ public class Persona {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+    
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public String getImg() {
         return img;
@@ -57,5 +65,8 @@ public class Persona {
     @NotNull
     @Size (min = 1, max = 60, message = "ERROR! Longitnud inadecuada!")
     private String img;
+    
+    @NotNull
+    private String descripcion;
     
 }
