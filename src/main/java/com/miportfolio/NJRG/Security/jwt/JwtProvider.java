@@ -16,40 +16,37 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtProvider {
+
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-    
+
     @Value("${jwt.secret}")
     private String secret;
     @Value("${jwt.expiration}")
     private int expiration;
-    
-    public String generateToken(Authentication authentication){
+
+    public String generateToken(Authentication authentication) {
         UsuarioPrincipal usuarioPrincipal = (UsuarioPrincipal) authentication.getPrincipal();
-        return Jwts.builder().setSubject(usuarioPrincipal.getUsername())
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(new Date().getTime()+expiration*1000))
-                .signWith(SignatureAlgorithm.HS512, secret)
-                .compact();
+        return Jwts.builder().setSubject(usuarioPrincipal.getUsername()).setIssuedAt(new Date()).setExpiration(new Date(new Date().getTime() + expiration * 1000)).signWith(SignatureAlgorithm.HS384, secret).compact();
     }
-    
-    public String getNombreUSuarioFromToken(String token){
+
+    public String getNombreUsuarioFromToken(String token) {
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
     }
-    
-    public boolean validateToken(String token){
-        try{
+
+    public boolean validateToken(String token) {
+        try {
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;
-        }catch (MalformedJwtException e){
+        } catch (MalformedJwtException e) {
             logger.error("Token mal formado");
         }catch (UnsupportedJwtException e){
-            logger.error("Token no soportado");
+            logger.error("unsupported token");
         }catch (ExpiredJwtException e){
-            logger.error("Token expirado");
-        }catch (IllegalArgumentException e){
-            logger.error("Token vacio");
+            logger.error("");
+        } catch (IllegalArgumentException e){
+            logger.error("token sin datos");
         }catch (SignatureException e){
-            logger.error("Firma no válida");
+            logger.error("Firma no valida");
         }
         return false;
     }

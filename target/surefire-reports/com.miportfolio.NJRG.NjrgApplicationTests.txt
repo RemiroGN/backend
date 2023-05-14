@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.miportfolio.NJRG.NjrgApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 97.246 s - in com.miportfolio.NJRG.NjrgApplicationTests
