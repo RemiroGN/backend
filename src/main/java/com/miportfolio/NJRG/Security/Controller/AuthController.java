@@ -69,12 +69,14 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors())
-            return new ResponseEntity(new Mensaje("Datos invalidos."),HttpStatus.BAD_REQUEST);
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(),loginUsuario.getPassword()));
-    
+            return new ResponseEntity(new Mensaje("Datos invalidos"), HttpStatus.BAD_REQUEST);
+        
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+        loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+        
         SecurityContextHolder.getContext().setAuthentication(authentication);
         
-        String jwt= jwtProvider.generateToken(authentication);
+        String jwt = jwtProvider.generateToken(authentication);
         
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         
