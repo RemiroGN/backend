@@ -2,7 +2,7 @@ package com.miportfolio.NJRG.Service;
 
 import com.miportfolio.NJRG.Entity.Experiencia;
 import com.miportfolio.NJRG.Repository.RExperiencia;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

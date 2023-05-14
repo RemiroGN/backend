@@ -1,6 +1,6 @@
 package com.miportfolio.NJRG.Dto;
 
-import jakarta.validation.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 
 public class dtoEducacion {
     @NotBlank

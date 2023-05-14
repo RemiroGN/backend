@@ -9,7 +9,7 @@ import com.miportfolio.NJRG.Security.Enums.RolNombre;
 import com.miportfolio.NJRG.Security.Service.RolService;
 import com.miportfolio.NJRG.Security.Service.UsuarioService;
 import com.miportfolio.NJRG.Security.jwt.JwtProvider;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;

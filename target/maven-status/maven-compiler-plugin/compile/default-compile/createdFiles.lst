@@ -8,6 +8,7 @@ com\miportfolio\NJRG\Controller\PersonaController.class
 com\miportfolio\NJRG\Security\Enums\RolNombre.class
 com\miportfolio\NJRG\Security\jwt\JwtTokenFilter.class
 com\miportfolio\NJRG\Security\MainSecurity.class
+com\miportfolio\NJRG\Dto\dtoPersona.class
 com\miportfolio\NJRG\Security\Controller\Mensaje.class
 com\miportfolio\NJRG\NjrgApplication.class
 com\miportfolio\NJRG\Security\Dto\JwtDto.class

@@ -3,7 +3,7 @@ package com.miportfolio.NJRG.Service;
 
 import com.miportfolio.NJRG.Entity.Educacion;
 import com.miportfolio.NJRG.Repository.REducacion;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package com.miportfolio.NJRG.Security.Service;
 import com.miportfolio.NJRG.Security.Entity.Rol;
 import com.miportfolio.NJRG.Security.Enums.RolNombre;
 import com.miportfolio.NJRG.Security.Repository.iRolRepository;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

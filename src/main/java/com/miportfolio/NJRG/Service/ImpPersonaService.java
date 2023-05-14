@@ -2,7 +2,7 @@ package com.miportfolio.NJRG.Service;
 
 import com.miportfolio.NJRG.Entity.Persona;
 import com.miportfolio.NJRG.Repository.IPersonaRepository;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
